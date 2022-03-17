@@ -196,7 +196,7 @@ static void main_application_task(void *pvParameters)
     {
         xEventGroupWaitBits(event_group, OTA_TASK_IN_NORMAL_STATE_EVENT, false, true, portMAX_DELAY);
 
-        counter = counter < 2 ? counter + 2 : 0;
+        counter = counter < DEV_COUNTER ? counter + DEV_COUNTER : 0;
 
         cJSON *root = cJSON_CreateObject();
         cJSON_AddNumberToObject(root, "counter", counter);
